@@ -1,0 +1,267 @@
+--- #Torch Neural Network
+version: 1
+layer_type: nn.Sequential
+layer_id: 1105246232
+input_dims: 32 x 1 x 52 x 52
+layer_test_input: test_input_001.torch
+layers:
+    - sequential_layer: 1
+      layer_type: cudnn.SpatialConvolution
+      layer_id: 1094937496
+      input_dims: 32 x 1 x 52 x 52
+      layer_test_input: test_input_002.torch
+      padW: 0
+      n_input_plane: 1
+      bias_file: weights_001.torch
+      dW: 1
+      padH: 0
+      kH: 3
+      weights_file: weights_002.torch
+      n_output_plane: 64
+      kW: 3
+      dH: 1
+      layer_test_output: test_output_001.torch
+      output_dims: 32 x 64 x 50 x 50
+    - sequential_layer: 2
+      layer_type: cudnn.SpatialBatchNormalization
+      layer_id: 1080858216
+      input_dims: 32 x 64 x 50 x 50
+      layer_test_input: test_input_003.torch
+      affine: true
+      bias_file: weights_003.torch
+      running_var_file: weights_004.torch
+      momentum: 0.01
+      eps: 1e-05
+      running_mean_file: weights_005.torch
+      weights_file: weights_006.torch
+      layer_test_output: test_output_002.torch
+      output_dims: 32 x 64 x 50 x 50
+    - sequential_layer: 3
+      layer_type: cudnn.ReLU
+      layer_id: 1101427040
+      input_dims: 32 x 64 x 50 x 50
+      layer_test_input: test_input_004.torch
+      layer_test_output: test_output_003.torch
+      output_dims: 32 x 64 x 50 x 50
+    - sequential_layer: 4
+      layer_type: cudnn.SpatialConvolution
+      layer_id: 1080379168
+      input_dims: 32 x 64 x 50 x 50
+      layer_test_input: test_input_005.torch
+      padW: 0
+      n_input_plane: 64
+      bias_file: weights_007.torch
+      dW: 1
+      padH: 0
+      kH: 3
+      weights_file: weights_008.torch
+      n_output_plane: 64
+      kW: 3
+      dH: 1
+      layer_test_output: test_output_004.torch
+      output_dims: 32 x 64 x 48 x 48
+    - sequential_layer: 5
+      layer_type: cudnn.SpatialBatchNormalization
+      layer_id: 1098360968
+      input_dims: 32 x 64 x 48 x 48
+      layer_test_input: test_input_006.torch
+      affine: true
+      bias_file: weights_009.torch
+      running_var_file: weights_010.torch
+      momentum: 0.01
+      eps: 1e-05
+      running_mean_file: weights_011.torch
+      weights_file: weights_012.torch
+      layer_test_output: test_output_005.torch
+      output_dims: 32 x 64 x 48 x 48
+    - sequential_layer: 6
+      layer_type: cudnn.ReLU
+      layer_id: 1090916384
+      input_dims: 32 x 64 x 48 x 48
+      layer_test_input: test_input_007.torch
+      layer_test_output: test_output_006.torch
+      output_dims: 32 x 64 x 48 x 48
+    - sequential_layer: 7
+      layer_type: cudnn.SpatialMaxPooling
+      layer_id: 1093062552
+      input_dims: 32 x 64 x 48 x 48
+      layer_test_input: test_input_008.torch
+      dH: 2
+      dW: 2
+      kW: 2
+      padW: 0
+      kH: 2
+      padH: 0
+      layer_test_output: test_output_007.torch
+      output_dims: 32 x 64 x 24 x 24
+    - sequential_layer: 8
+      layer_type: cudnn.SpatialConvolution
+      layer_id: 1105240248
+      input_dims: 32 x 64 x 24 x 24
+      layer_test_input: test_input_009.torch
+      padW: 0
+      n_input_plane: 64
+      bias_file: weights_013.torch
+      dW: 1
+      padH: 0
+      kH: 3
+      weights_file: weights_014.torch
+      n_output_plane: 128
+      kW: 3
+      dH: 1
+      layer_test_output: test_output_008.torch
+      output_dims: 32 x 128 x 22 x 22
+    - sequential_layer: 9
+      layer_type: cudnn.SpatialBatchNormalization
+      layer_id: 1073888280
+      input_dims: 32 x 128 x 22 x 22
+      layer_test_input: test_input_010.torch
+      affine: true
+      bias_file: weights_015.torch
+      running_var_file: weights_016.torch
+      momentum: 0.01
+      eps: 1e-05
+      running_mean_file: weights_017.torch
+      weights_file: weights_018.torch
+      layer_test_output: test_output_009.torch
+      output_dims: 32 x 128 x 22 x 22
+    - sequential_layer: 10
+      layer_type: cudnn.ReLU
+      layer_id: 1090935440
+      input_dims: 32 x 128 x 22 x 22
+      layer_test_input: test_input_011.torch
+      layer_test_output: test_output_010.torch
+      output_dims: 32 x 128 x 22 x 22
+    - sequential_layer: 11
+      layer_type: cudnn.SpatialConvolution
+      layer_id: 1080630064
+      input_dims: 32 x 128 x 22 x 22
+      layer_test_input: test_input_012.torch
+      padW: 0
+      n_input_plane: 128
+      bias_file: weights_019.torch
+      dW: 1
+      padH: 0
+      kH: 3
+      weights_file: weights_020.torch
+      n_output_plane: 128
+      kW: 3
+      dH: 1
+      layer_test_output: test_output_011.torch
+      output_dims: 32 x 128 x 20 x 20
+    - sequential_layer: 12
+      layer_type: cudnn.SpatialBatchNormalization
+      layer_id: 1096245240
+      input_dims: 32 x 128 x 20 x 20
+      layer_test_input: test_input_013.torch
+      affine: true
+      bias_file: weights_021.torch
+      running_var_file: weights_022.torch
+      momentum: 0.01
+      eps: 1e-05
+      running_mean_file: weights_023.torch
+      weights_file: weights_024.torch
+      layer_test_output: test_output_012.torch
+      output_dims: 32 x 128 x 20 x 20
+    - sequential_layer: 13
+      layer_type: cudnn.ReLU
+      layer_id: 1101435216
+      input_dims: 32 x 128 x 20 x 20
+      layer_test_input: test_input_014.torch
+      layer_test_output: test_output_013.torch
+      output_dims: 32 x 128 x 20 x 20
+    - sequential_layer: 14
+      layer_type: cudnn.SpatialConvolution
+      layer_id: 1080316408
+      input_dims: 32 x 128 x 20 x 20
+      layer_test_input: test_input_015.torch
+      padW: 0
+      n_input_plane: 128
+      bias_file: weights_025.torch
+      dW: 1
+      padH: 0
+      kH: 3
+      weights_file: weights_026.torch
+      n_output_plane: 128
+      kW: 3
+      dH: 1
+      layer_test_output: test_output_014.torch
+      output_dims: 32 x 128 x 18 x 18
+    - sequential_layer: 15
+      layer_type: cudnn.SpatialBatchNormalization
+      layer_id: 1080593808
+      input_dims: 32 x 128 x 18 x 18
+      layer_test_input: test_input_016.torch
+      affine: true
+      bias_file: weights_027.torch
+      running_var_file: weights_028.torch
+      momentum: 0.01
+      eps: 1e-05
+      running_mean_file: weights_029.torch
+      weights_file: weights_030.torch
+      layer_test_output: test_output_015.torch
+      output_dims: 32 x 128 x 18 x 18
+    - sequential_layer: 16
+      layer_type: cudnn.ReLU
+      layer_id: 1086894032
+      input_dims: 32 x 128 x 18 x 18
+      layer_test_input: test_input_017.torch
+      layer_test_output: test_output_016.torch
+      output_dims: 32 x 128 x 18 x 18
+    - sequential_layer: 17
+      layer_type: cudnn.SpatialMaxPooling
+      layer_id: 1080559280
+      input_dims: 32 x 128 x 18 x 18
+      layer_test_input: test_input_018.torch
+      dH: 2
+      dW: 2
+      kW: 2
+      padW: 0
+      kH: 2
+      padH: 0
+      layer_test_output: test_output_017.torch
+      output_dims: 32 x 128 x 9 x 9
+    - sequential_layer: 18
+      layer_type: nn.View
+      layer_id: 1101733080
+      input_dims: 32 x 128 x 9 x 9
+      layer_test_input: test_input_019.torch
+      size_file: weights_031.torch
+      layer_test_output: test_output_018.torch
+      output_dims: 32 x 10368
+    - sequential_layer: 19
+      layer_type: nn.Linear
+      layer_id: 1096864648
+      input_dims: 32 x 10368
+      layer_test_input: test_input_020.torch
+      weights_file: weights_032.torch
+      bias_file: weights_033.torch
+      layer_test_output: test_output_019.torch
+      output_dims: 32 x 2048
+    - sequential_layer: 20
+      layer_type: cudnn.ReLU
+      layer_id: 1084993344
+      input_dims: 32 x 2048
+      layer_test_input: test_input_021.torch
+      layer_test_output: test_output_020.torch
+      output_dims: 32 x 2048
+    - sequential_layer: 21
+      layer_type: nn.Linear
+      layer_id: 1092086296
+      input_dims: 32 x 2048
+      layer_test_input: test_input_022.torch
+      weights_file: weights_034.torch
+      bias_file: weights_035.torch
+      layer_test_output: test_output_021.torch
+      output_dims: 32 x 57
+    - sequential_layer: 22
+      layer_type: nn.View
+      layer_id: 1073843040
+      input_dims: 32 x 57
+      layer_test_input: test_input_023.torch
+      size_file: weights_036.torch
+      layer_test_output: test_output_022.torch
+      output_dims: 32 x 19 x 3
+layer_test_output: test_output_023.torch
+output_dims: 32 x 19 x 3
+
